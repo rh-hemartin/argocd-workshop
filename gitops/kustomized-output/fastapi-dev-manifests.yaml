@@ -1,4 +1,4 @@
-# git commit: f389a42ef9366e7fd00304f58741d00adf582f85
+# git commit: 44873f4eaf9e5de10c1a1162daa1232e73aeecba
 apiVersion: v1
 kind: Namespace
 metadata:
@@ -8,11 +8,11 @@ apiVersion: v1
 data:
   CLUSTER: dev-cluster
   CLUSTER_IMAGE: dev
-  IMAGE: quay.io/hemartin/fastapi-argocd-workshop:dev-f389a42ef9366e7fd00304f58741d00adf582f85
+  IMAGE: quay.io/hemartin/fastapi-argocd-workshop:dev-44873f4eaf9e5de10c1a1162daa1232e73aeecba
   PORT: "8080"
 kind: ConfigMap
 metadata:
-  name: app-envs-4f67mdbtm4
+  name: app-envs-2m5kt8t49m
   namespace: dev-fastapi
 ---
 apiVersion: v1
@@ -58,8 +58,8 @@ spec:
       containers:
       - envFrom:
         - configMapRef:
-            name: app-envs-4f67mdbtm4
-        image: quay.io/hemartin/fastapi-argocd-workshop:dev-f389a42ef9366e7fd00304f58741d00adf582f85
+            name: app-envs-2m5kt8t49m
+        image: quay.io/hemartin/fastapi-argocd-workshop:dev-44873f4eaf9e5de10c1a1162daa1232e73aeecba
         livenessProbe:
           httpGet:
             path: /fastapi/health
