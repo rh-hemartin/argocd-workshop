@@ -12,8 +12,8 @@ on:
 
 env:
   REGISTRY_URL: quay.io
-  REGISTRY_USERNAME: falrayes
-  REGISTRY_ACCESS_USER: falrayes+argocd_workshop
+  REGISTRY_USERNAME: hemartin
+  REGISTRY_ACCESS_USER: hemartin+argocd
   FASTAPI_IMAGE_REPO: fastapi-argocd-workshop
   GO_IMAGE_REPO: go-argocd-workshop
   CI_COMMIT_MESSAGE: "[ci-auto-commit] Continuous Integration: Manifests generated and updated."
@@ -101,7 +101,7 @@ jobs:
         run: |
           echo "dev-image=$(echo '${{ steps.push-go-to-registry.outputs.registry-paths }}' | jq -r '.[1]')" >> "$GITHUB_OUTPUT"
           echo "prod-image=$(echo '${{ steps.push-go-to-registry.outputs.registry-paths }}' | jq -r '.[2]')" >> "$GITHUB_OUTPUT"
-  
+
   update-manifests:
     name: Update the kubernetes manifests
     runs-on: ubuntu-latest
